@@ -12,7 +12,7 @@ func main() {
 	router := gin.Default()
 
 	//初始100，每秒放出100
-	router.Use(middleware.RateLimitMiddleware(time.Second, 100, 100))
+	router.Use(middleware.RateLimit(time.Second, 100, 100))
 	router.Use(middleware.CheckParams())
 
 	//注册路由
